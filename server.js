@@ -1,6 +1,6 @@
 // set up ======================================================================
 var express  = require('express');
-var app      = express(); 								// create our app w/ express
+var app      = express(); 								// create the app w/ express
 var mongoose = require('mongoose'); 					// mongoose for mongodb
 var port  	 = process.env.PORT || 3000; 				// set the port
 var database = require('./config/database'); 			// load the database config
@@ -10,7 +10,7 @@ var bodyParser = require('body-parser'); 	// pull information from HTML POST (ex
 var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 
 // configuration ===============================================================
-mongoose.connect(database.url); 	// connect to mongoDB database on modulus.io
+mongoose.connect(database.url); 	// connect to mongoDB database
 
 app.use(express.static(__dirname + '/public')); 				// set the static files location /public/img will be /img for users
 app.use(morgan('dev')); 										// log every request to the console
