@@ -1,4 +1,4 @@
-var scotchTodo = angular.module('scotchTodo', []);
+var TodoApp = angular.module('TodoApp', []);
 
 function mainController($scope, $http) {
 	$scope.formData = {};
@@ -25,7 +25,7 @@ function mainController($scope, $http) {
 			});
 	};
 
-	// delete a todo after checking it
+	// delete a todo after ticking the checkbox
 	$scope.deleteTodo = function(id) {
 		$http.delete('/api/todos/' + id)
 			.success(function(data) {
